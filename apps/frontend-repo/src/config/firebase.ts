@@ -3,16 +3,16 @@ import { getFunctions } from "firebase/functions";
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBNnfJU-rKxEqAe0ce2KRAcEk5Slnqm5n0",
-  authDomain: "ebuddy-39919.firebaseapp.com",
-  projectId: "ebuddy-39919",
-  storageBucket: "ebuddy-39919.firebasestorage.app",
-  messagingSenderId: "237552817988",
-  appId: "1:237552817988:web:7b53237b6ad89345c9e911"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const functions = getFunctions(app);
 
-export { app, auth, functions }
+export { app, auth, functions };

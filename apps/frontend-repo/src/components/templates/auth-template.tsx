@@ -1,5 +1,7 @@
 "use client";
 
+import { Alert, AlertTitle } from "@mui/material";
+
 import CssBaseline from "@mui/material/CssBaseline";
 import React from "react";
 import Stack from "@mui/material/Stack";
@@ -21,6 +23,7 @@ const StyledContainer = styled(Stack)(({ theme }) => ({
 const Container = styled("div")(({ theme }) => ({
   width: "100%",
   maxWidth: 450,
+  marginBottom: 24,
   padding: theme.spacing(4),
   borderRadius: theme.shape.borderRadius * 2,
   boxShadow: theme.shadows[4],
@@ -37,6 +40,15 @@ export default function AuthTemplate({ children }: AuthTemplateProps) {
       <CssBaseline />
       <StyledContainer>
         <Container>{children}</Container>
+        <Alert severity="info" style={{ width: "450px" }}>
+          <AlertTitle>Login Credentials</AlertTitle>
+          For test purposes, here are the login details:
+          <ol>
+            <li>Email: user@user.com</li>
+            <li>Password: user123</li>
+          </ol>
+        </Alert>
+        ;
       </StyledContainer>
     </>
   );
